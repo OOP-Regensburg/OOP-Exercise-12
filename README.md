@@ -50,6 +50,9 @@ Die vorgegebene Datei enthält folgenden Inhalt. Ihr Programm sollte aber auch m
 anderen Städte-Kombinationen funktionieren, die in der selben Weise formatiert
 sind.
 
+Um die eingelesenen Zeilen in 'Teilstrings' zu unterteilen können sie die Methode [`String.split()`](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#split())
+nutzen. Übergeben sie der Methode das/die Zeichen bei dem sie den String trennen wollen. Das Ergebnis ist ein `Array` welches alle 'Teilstrings' beinhaltet.
+
 Achten sie darauf in ihrem Programm überflüssige Leerzeichen zu entfernen.
 Hierzu können sie die Methode [`String.trim()`](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#trim()) nutzen.
 
