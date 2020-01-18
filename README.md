@@ -1,10 +1,10 @@
-#Übungsblatt 12
-##Wichtige Informationen zur Bearbeitung der Aufgabe
+# Übungsblatt 12
+## Wichtige Informationen zur Bearbeitung der Aufgabe
 * [Informationen zur Entwicklungsumgebung IntelliJ IDEA](https://regensburger-forscher.de/oop/tutorials/Entwicklungsumgebung)
 * [Informationen zum Im- und Export von Projekten](https://regensburger-forscher.de/oop/tutorials/Starterprojekte)
-##Starterpaket
+## Starterpaket
 Ein vorbereitetes Starterpaket zur selbständigen Implementierung der Aufgaben finden Sie hier: [Starterpaket](https://github.com/OOP-Regensburg/OOP-Exercise-12/archive/Starterpaket.zip)
-#Flight Planner
+# Flight Planner
 Ihre Aufgabe ist es, eine KonsolenApplikation zu schreiben, welche aus einer Datei Flugziele
 von verschiedenen Städten ausliest und dem Nutzer erlaubt, einen Round-Trip
 mit dem Flugzeug zu planen.
