@@ -13,11 +13,11 @@ public class Main {
     private static String current;
 
     public static void main(String[] args) throws IOException {
-        readFlights(loadFile(FILE_PATH));
         initialize();
     }
 
     private static void initialize() {
+        readFlights();
         start();
         do {
             System.out.println("Where do you want to go from " + current + "?");
@@ -75,6 +75,7 @@ public class Main {
 
     /**
      * Liest die letzte Konsoleneingabe des Nutzers aus
+     * 
      * @return Nutzereingabe
      */
     private static String readLine() {
@@ -82,21 +83,9 @@ public class Main {
         return scanner.nextLine();
     }
 
-    /**
-     * Lädt die Datei am übergebenen Speicherort in einen BufferedReader
-     * @param path
-     * @return
-     * @throws FileNotFoundException
-     */
-    private static BufferedReader loadFile(String path) throws FileNotFoundException {
-        File file = new File(path);
-        FileReader fileReader = new FileReader(file);
-        return new BufferedReader(fileReader);
-    }
-
-    private static void readFlights(BufferedReader br) throws IOException {
-        String line;
-        while ((line = br.readLine()) != null) {
+    private static void readFlights() {
+        String[] lines = FileReader.getLinesFromFile(FILE_PATH);
+        for (String line : lines) {
             String[] originDestinations = line.split("->");
             String origin = originDestinations[0].trim();
             String[] destinations = splitDestinations(originDestinations[1]);
