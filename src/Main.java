@@ -5,11 +5,12 @@ public class Main {
     private static final String FILE_PATH = "data/flights.txt";
 
     public static void main(String[] args) throws IOException {
-        readFlights(loadFile(FILE_PATH));
         initialize();
     }
 
     private static void initialize() {
+        // Liest die Inhalte der Datei "data/flights.txt" zeilenweise in ein String-Array
+        String[] lines = FileReader.getLinesFromFile(FILE_PATH);
     }
 
     /**
@@ -21,22 +22,5 @@ public class Main {
         return scanner.nextLine();
     }
 
-    /**
-     * Lädt die Datei am übergebenen Speicherort in einen BufferedReader
-     * @param path
-     * @return
-     * @throws FileNotFoundException
-     */
-    private static BufferedReader loadFile(String path) throws FileNotFoundException {
-        File file = new File(path);
-        FileReader fileReader = new FileReader(file);
-        return new BufferedReader(fileReader);
-    }
 
-    private static void readFlights(BufferedReader br) throws IOException {
-        String line;
-        while ((line = br.readLine()) != null) {
-
-        }
-    }
 }
