@@ -1,5 +1,6 @@
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -11,7 +12,7 @@ public class Main {
 
     private static String origin;
     private static String current;
-    private boolean isStarted;
+    private static boolean isStarted;
 
     public static void main(String[] args) throws IOException {
         initialize();
@@ -66,11 +67,12 @@ public class Main {
     }
 
     private static boolean isValidDestination(String destination) {
-        if(!isStarted) {
+        if(isStarted){
+            String[] destinations = flights.get(current);
+            return Arrays.asList(destinations).contains(destination);
+        }else{
             return flights.containsKey(destination);
-        } else {
-            return flights.containsKey(destination) && Arrays.asList(flights.get(destination)).contains(destination);
-        } 
+        }
     }
 
     private static void printDestinations(String origin) {
