@@ -11,6 +11,7 @@ public class Main {
 
     private static String origin;
     private static String current;
+    private boolean isStarted;
 
     public static void main(String[] args) throws IOException {
         initialize();
@@ -19,12 +20,14 @@ public class Main {
     private static void initialize() {
         readFlights();
         start();
+
         do {
             System.out.println("Where do you want to go from " + current + "?");
             printDestinations(current);
             current = getInput();
             trip.add(current);
         } while (!origin.equals(current));
+        
         end();
     }
 
@@ -39,6 +42,7 @@ public class Main {
         origin = getInput();
         current = origin;
         trip.add(origin);
+        isStarted = true;
     }
 
     private static void end() {
@@ -62,7 +66,11 @@ public class Main {
     }
 
     private static boolean isValidDestination(String destination) {
-        return flights.containsKey(destination) && Arrays.asList(flights.get(destination)).contains(destination);
+        if(!isStarted) {
+            return flights.containsKey(destination);
+        } else {
+            return flights.containsKey(destination) && Arrays.asList(flights.get(destination)).contains(destination);
+        } 
     }
 
     private static void printDestinations(String origin) {
