@@ -62,7 +62,7 @@ public class Main {
     }
 
     private static boolean isValidDestination(String destination) {
-        return flights.containsKey(destination);
+        return flights.containsKey(destination) && Arrays.asList(flights.get(destination)).contains(destination);
     }
 
     private static void printDestinations(String origin) {
